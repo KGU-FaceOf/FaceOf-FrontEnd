@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="FaceOf">
+    <meta property="og:description" content="FaceOf에서 나의 얼굴에 대해 알아보세요~">
+    <meta property="og:image" content="/static/images/FaceOf_main.png">
+    <title>FaceOf</title>
+    <script src="https://kit.fontawesome.com/a5302adcbb.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./static/images/facial-recognition.ico">
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <header>
+        <div>
+            <!-- 로고 -->
+            <a class="logo" href="/"><i class=""></i> FaceOf</a>
+            <!-- 메뉴 바 -->
+            <Nav>
+                <ul id="gnb">
+                    <li><a href="#main">Main</a></li>
+                    <li><a href="#instroduction">Introduction</a></li>
+                    <li><a href="#analyze">Analyze</a></li>
+                </ul>
+                
+                <div class="burger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </Nav>
+        </div>
+    </header>
+
+    <!-- 첫 화면  -->
+    <figure id="main">
+        <div class="acryl"></div>
+        <div>
+            <video id="vd" src="/static/videos/main.mp4" autoplay loop muted></video>
+        </div>
+        <script>
+            var v = document.getElementById("vd"); 
+            v.playbackRate = 0.65;
+        </script>
+        <div class="greeting">
+            <p class="main_logo">
+                <span>Face of</span>
+                <span></span>
+            </p>
+
+            <span class="intro">당신의 관상은?</span>
+        </div>
+    </figure>
+
+    <main>
+        <!-- 페이스오브 소개 -->
+        <div id="instroduction"></div>
+        <section class="introduction" >
+            
+        </section>
+        <div class="gap"></div>
+        <!-- 필요하다면 추가로 쓸 것 -->
+        <section class="intro">
+
+        </section>
+        <div class="gap"></div>
+        <!-- 분석 페이지로 가는 버튼이 존재 -->
+        <section class="analyze">
+            
+        </section>
+        <div class="gap"></div>
+    </main>
+
+    <!-- 카피라이트 -->
+    <footer>
+        <div class="footer_copyright">Copyright &copy; FaceOf. ALL RIGHTS RESERVED.</div>
+        <a class="footer_scroll-up" href="#main"><i class="fas fa-angle-up"></i></a>
+    </footer>
+
+    <div class="burgermenu">
+        <div class="burgerheader">
+            <div class="close-burger"><i class="fas fa-angle-right"></i></div>
+        </div>
+        <div class="sub">
+            <a href="#main">Main</a>
+            <a href="#instroduction">Introdction</a>
+            <a href="#analyze">Analyze<a>
+        </div>
+    </div>
+    <div class="shadow"></div>
+</body>
+</html>

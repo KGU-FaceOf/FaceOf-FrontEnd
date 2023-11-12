@@ -1,0 +1,304 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=Gowun+Batang&family=Grape+Nuts&family=Indie+Flower&family=Wallpoet&display=swap');
+@import "/static/src/reset.css";
+
+/* 
+
+    내가 만든 페이지는 보여주고 이해시키기 위한 UI의 확장으로서,
+    몇몇 구성요소들의 크기가 vw, vh로 설정되어 있으니 참고 바람.
+
+    - 재영
+
+*/
+
+html {
+    scroll-behavior: smooth;
+}
+body{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(-67deg, #000000, #111111, #070707, #000000);
+    animation: flow-background 15s ease infinite;
+    background-size: 800% 800%;
+}
+
+@keyframes flow-background { 
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* 헤더, 네비 */
+header{
+    width: 100vw;
+    height: 10vh;
+    background: rgba(255, 255, 255, .1);
+    position: fixed;
+    top: 0px; left: 0px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 9px 10px 0px rgba(0,0,0,0.1);
+}
+header div{
+    opacity: .96;
+    width: 94%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+.logo {
+    font: bold  26px/1 "Grape Nuts";
+    color: aliceblue;
+}
+nav{
+    display: flex;
+}
+#gnb {
+    display: flex;
+    margin-right: 3vw;
+}
+#gnb li {
+    margin: 0px 20px;
+}
+#gnb li a{
+    font: bold 20px/1 "Grape Nuts";
+    color: aliceblue;
+    letter-spacing: 1px;
+}
+header a:hover{
+    color: rgb(228, 214, 255);
+    text-shadow: 0px 0px 20px rgba(226, 213, 232, 0.5);
+}
+#gnb li a:hover{
+    color: rgb(228, 214, 255);
+    text-shadow: 0px 0px 20px rgba(226, 213, 232, 0.5);
+}
+
+.burger {
+    display: none;
+    font-size: 24px;
+    color: white;
+    margin-right: 2vw;
+    cursor: pointer;
+}
+
+/* 첫 화면 */
+figure{
+    width: 100%;
+    height: 100vh;
+    top: 0px; left: 0px;    
+    overflow: hidden;
+}
+figure video{
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.greeting{
+    position: absolute;
+    right: 6vw;
+    top: 45%;
+    transform: translateY(-50%);
+}
+.main_logo{
+    font: normal 6vh/1 "Architects Daughter";
+    color: rgba(236, 236, 236, 0.74);
+}
+.intro{
+    display: inline-block;
+    margin-top: 5vh;
+    color: rgb(192, 203, 241);
+    font: Bold 1.6vw/1 "Architects Daughter";
+}
+/* 
+    요건 비디오 위에 씌우려고 한건데 무시해도 OK.
+.acryl{
+    top: 0; right: 0; 
+    width: 100%; height: 100%; 
+    z-index: 1; 
+    background: rgba(0, 0, 0, 0); 
+    display: none; 
+} */
+
+/* main */
+main{
+    width: 100%;    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main section{
+    width: 80vw;
+    height: 100vh;
+}
+
+/*  */
+.gap{height: 25vh;}
+
+/* footer */
+footer{
+    width: 100%;
+    height: 10vh;
+    background: rgba(30, 29, 29, 0.448);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footer_copyright{
+    color: rgb(169, 168, 168);
+    font: .8vw/1 "Arial";
+    letter-spacing: 2px;
+}
+.footer_scroll-up{
+    width: 3.5vw; height: 3.5vw;
+    background: rgb(68, 67, 67);
+    border-radius: 50%;
+    position: fixed;
+    bottom: 3vh; right: 3vh;
+    z-index: 10;
+    text-align: center;
+    line-height: 3.3vw;
+    color: white;
+    box-shadow: 1px 2px 5px 0px rgba(0,0,0,.3);
+}
+.footer_scroll-up:hover{
+    background: rgb(173, 172, 172);
+}
+
+/* 버거 메뉴 */
+.burgermenu{
+    display: none;
+}
+.burgermenu.on{
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+    position: fixed;
+    background: rgba(62, 62, 62, 0.584);
+    top: 0; right: 0;
+    width: 20vw;
+    height: 100vh;
+}
+.burgerheader{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.close-burger{
+    width: 100%;
+    display: none;
+    display: block;
+    transition: all .5s ease;
+    display: none;
+}
+.close-burger.on{
+    display: block;
+    font-size: 24px;
+    color: white;
+    padding-top: 10%;
+    padding-left: 10%;
+    cursor: pointer;
+}
+.close-burger:hover{
+    color: rgb(203, 203, 203);
+    text-shadow: 0px 0px 20px rgba(173, 167, 255, 0.5);
+}
+
+.sub { 
+    width: 100%;
+    height: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20vh;
+}
+.sub a{
+    font: bold 1.5em/1 "Grape Nuts";
+    color: aliceblue;
+    letter-spacing: 2px;
+}
+.sub a:hover{
+    color: rgb(177, 177, 177);
+    text-shadow: 0px 0px 20px rgba(204, 198, 255, 0.5);
+}
+.shadow { 
+    position: fixed; 
+    top: 0; right: 0; 
+    width: 100%; height: 100%; 
+    z-index: 90; 
+    background: rgba(0, 0, 0, 0.7); 
+    display: none; 
+    cursor: pointer; 
+}
+
+/* 반응형 */
+@media screen and (max-width: 1024px){
+    header{
+        height: 12vh;
+    }
+    #gnb{
+        display: none;
+    }
+    .burger{
+        display: block;
+    }
+
+    .main_logo{
+        font-size: 11vw;
+    }
+}
+@media screen and (max-width: 1350px) and (min-height: 1000px) {
+    .main_logo{
+        font-size: 12vw;
+    }
+}
+@media screen and (max-width: 768px){
+    .main_logo{
+        font-size: 13vw;
+    }
+    .sub a{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 500px) and (min-height: 740px) {
+    .main_logo{
+        font-size: 18vw;
+    }
+    .gap{
+        height: 7vh;
+    }
+    .sub a{
+        font-size: 1.3em;
+    }
+    .burgermenu.on{
+        width: 40vw;
+    }
+}
+@media screen and (max-width: 375px) and (min-height: 700px) {
+    .gap{
+        height: 20vh;
+    }
+    .sub a{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width: 300px) and (min-height: 650px) {
+    .gap{
+        height: 20vh;
+    }
+    .sub a{
+        font-size: .9em;
+    }
+    .burgermenu.on{
+        width: 40vw;
+    }
+}
